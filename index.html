@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gi’Aquiven del Velo - Wizard</title>
+    <style>
+        /* Genel Stiller */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f6f6f6;
+            color: #222;
+            line-height: 1.6;
+            padding: 20px;
+            background-image: url(content/bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            /* background-image: linear-gradient(to bottom, #e0e0e0 0%, #f5f5f5 100%); */
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+        
+        /* Başlık Alanı */
+        .page-header {
+            background: linear-gradient(90deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 40px;
+            border-bottom: 5px solid #db9e62;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+        
+        .page-header .tagline {
+            font-style: italic;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        /* Ana İçerik Alanı */
+        .main-content {
+            display: flex;
+            padding: 30px;
+            gap: 30px;
+        }
+        
+        /* Hikaye Bölümü */
+        .story-section {
+            flex: 1;
+        }
+        
+        .story-section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #db9e62;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+        }
+        
+        .story-content {
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        .story-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Karakter Bilgileri */
+        .character-info {
+            width: 350px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            align-self: flex-start;
+        }
+        
+        .character-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #2c3e50, #4a6491);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .character-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+        
+        .character-details {
+            padding: 25px;
+        }
+        
+        .character-details h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #db9e62;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .info-table tr {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-table td {
+            padding: 12px 5px;
+        }
+        
+        .info-table td:first-child {
+            font-weight: bold;
+            width: 40%;
+            color: #2c3e50;
+        }
+        
+        /* Kaynakça */
+        .references {
+            background: #f0f0f0;
+            padding: 25px 40px;
+            border-top: 1px solid #ddd;
+            margin-top: 30px;
+        }
+        
+        .references h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .references ul {
+            padding-left: 25px;
+        }
+        
+        .references li {
+            margin-bottom: 8px;
+        }
+        
+        .references a {
+            color: #2c5cc5;
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive Tasarım */
+        @media (max-width: 900px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .character-info {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .character-image {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .character-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>Gi’Aquiven del Velo</h1>
+            <div class="tagline">Solmuş Sisin Ardındaki Çatlak</div>
+        </header>
+        
+        <div class="main-content">
+            <section class="story-section">
+                <h2>Karakter Hikayesi</h2>
+                <div class="story-content">
+                    <p>Zirveler sessizdi. Rüzgâr her zamanki gibi şarkısını söylüyor, bulutlar sonsuz göğün üst katmanlarında tembellikle gezinmeye devam ediyordu. Ama Aquiven, o sabah bir şeyin değiştiğini hissetmişti. Sanki zaman, uçurumun kenarından aşağıya düşmek üzereymiş gibi bekliyordu. Henüz görünmeyen bir şey yaklaşmaktaydı — ve Aquiven bunu hissedebiliyordu.</p>
+                    
+                    <p>Del Velo soyunun bir evladıydı o. Sisli efsanelerle anılan, rüzgârın ardındaki fısıltıları dinleyen bir halktan geliyordu. Ataları, kehanetlerin ağırlığını omuzlarında taşıyan, görünmeyen geleceğin izlerini gökyüzünün titreşimlerinde okuyan bir soydan gelmişti. Ama bu bilgiler, artık yalnızca yaşlıların dudaklarında kuruyan birer masal olmuştu. Genç Aquiven için bunlar yalnızca geçmişin sesleriydi — o, başka bir şeyin peşindeydi.</p>
+                    
+                    <p>Aquiven'in hayatı, büyüyle ilgilenen bir grup bilgenin yaşadığı zirveye ulaştığında değişti. Onlar, doğayla uyum içinde yaşamak yerine, onu gözlemleyen, parçalayan, anlayan varlıklardı. Büyüyü kelimelere döküyor, zamanı formüllerle açıklıyorlardı. Küçük Aquiven, bu yabancı misafirleri izlerken büyülenmişti. Onların ellerinde, tüyden yapılma bir şey vardı sanki — ama bu kez uçmak değil, zamanı şekillendirmek içindi. Ve işte o gün, ilk defa kendi kanatlarının ötesine bakmaya başladı</p>
+                    
+                    <p>Ailesi karşı çıktı. Büyü, Del Velo soyunun damarlarında bir zamanlar güçlüydü; ataları, sisin ardındaki zamanı okuyan, yıldızların dansını çözen büyücülerdi. Ancak zamanla bu bilgi unutulmuş, büyüyle konuşanlar azalmış ve sonunda tamamen susmuştu. Artık soy, yalnızca rüzgârı dinleyen sessiz gözlemcilere dönüşmüştü. Aquiven’in büyüye yönelme arzusu, onlara geçmişin bir gölgesini hatırlatıyor ama aynı zamanda bir korkuyu da tetikliyordu.</p>
+                    
+                    <p>“Büyü bir zincirdir,” dedi dedesi, gözlerinde gökyüzüne duyulan eski bir özlemle. “Rüzgâr özgürdür. Zinciri seçen uçamaz.” Ama Aquiven dinlemedi. Del Velo soyundan geldiğini unutmadıysa da, belki de bu zinciri kırarak yeniden büyüye ses verecek kişi olacağına inandı.  Bir Aarakocra’nın yalnızca gökyüzüne ait olmadığını kanıtlarcasına.</p>
+                    
+                    <p>Akademideki yıllar, bir fırtına kadar karışıktı. Aquiven ilgili, dikkatli ama başına buyruktu. Hocaların sabrı, onun merakı karşısında zorlandı. Kuralları sınar, yöntemleri sorgular, sürekli daha ötesini arardı. Zaman büyüsü üzerine yapılan bir deney sırasında yaşanan bir hata, onu birkaç saniyeliğine kendi geleceğine taşıdı. Orada yalnızdı. Tüyleri solmuş, sesi susmuş, gözlerinde zamanın ağırlığı vardı.</p>
+
+                    <p>Bu deneyim onu değiştirdi. Geri döndüğünde, bir şey kırılmış ama yerini başka bir şeyle doldurmuştu: sessizlik. Artık bağırmazdı, tartışmazdı. Ama konuştuğunda, herkes dinlerdi. Hocaları bu dönüşümün ardından ona Aarakocra dilinde eski bir unvan verdi: <b>“Gi’” — Görülmeden önce hisseden.</b> Bu yalnızca bir takı değildi, bu bir uyanıştı. Artık adı <b>Gi’Aquiven</b> idi. Zamanla göz göze gelen bir öğrencinin adı.</p>
+
+                    <p>Yıllar sonra, akademiden ayrılıp zirvelere döndüğünde memleketini tanıyamadı. Gökyüzü hâlâ yüksekti, ama rüzgârın içinde ağır bir şey vardı. Kayaların arasındaki sis, artık eskisi gibi huzur verici değildi; sanki peçenin ardındaki dünya solmuştu. İlk zamanlar yalnızca değişimi gözlemledi, ama zamanla bu değişimin onu da içine aldığını fark etti. Bilgisini paylaşabileceği kimse kalmamıştı, yeni sorular soran olmamıştı. Büyü, burada yalnızca bir söylentiye dönüşmüştü. Ve Gi’Aquiven, durgun suların içini çürüttüğünü biliyordu.</p>
+
+                    <p>Geceleri uyuyamaz olmuştu. Rüyalarında peçeler açılıyor, sesler fısıldıyor, eski ataları onu çağırıyordu. “Zaman burada bozuldu,” diyordu rüzgâr. “Ve bu, senin soyunun taşıyacağı bir yük.”</p>
+
+                    <p>Gi’ artık yalnızca memleketinin bozulduğunu değil, kendi gelişiminin de durduğunu anlıyordu. Bu topraklar onu büyütmüştü, ama artık onu tutuyordu. Ve zamanın ilerleyemediği yerde, yaşayan hiçbir şey derinleşemezdi.</p>
+
+                    <p>Gi’Aquiven anladı ki, Del Velo soyunun efsaneleri yalnızca geçmişi anlatmıyor, geleceğe de işaret ediyordu. Toprakta gizli bir yara vardı — elementsel bir yozlaşma, zamanın akışında bir çatlak. Ve bu çatlak, onu çağırıyordu. Belki de onun gözleri ve büyüsü, zamanı onaracak ilk anahtardı. Ve böylece Gi’Aquiven del Velo yeniden yola çıktı. Rüzgârın önünden değil, onunla birlikte yürüyerek.</p>
+
+                </div>
+            </section>
+            
+            <aside class="character-info">
+                <div class="character-image">
+                    <img src="content/char.png" alt="Karanlık Şövalye">
+                </div>
+                <div class="character-details">
+                    <h3>Gi’Aquiven del Velo</h3>
+                    <table class="info-table">
+                        <tr>
+                            <td>Irk</td>
+                            <td>Aarakocra</td>
+                        </tr>
+                        <tr>
+                            <td>Cinsiyet</td>
+                            <td>Erkek</td>
+                        </tr>
+                        <tr>
+                            <td>Yaş</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>Boy</td>
+                            <td>167</td>
+                        </tr>
+                        <tr>
+                            <td>Kilo</td>
+                            <td>49</td>
+                        </tr>
+                        <tr>
+                            <td>Sınıf</td>
+                            <td>Wizard</td>
+                        </tr>
+                        <tr>
+                            <td>Alt Sınıf</td>
+                            <td>Chronurgy Magic</td>
+                        </tr>
+                        <tr>
+                            <td>Arka Plan</td>
+                            <td>Sage</td>
+                        </tr>
+                        <tr>
+                            <td>Yaslanış</td>
+                            <td>Tarafsız İyi</td>
+                        </tr>
+                    </table>
+                </div>
+            </aside>
+        </div>
+        
+        <div class="references">
+            <h3>Kaynakça</h3>
+            <ul>
+                <li><a href="https://dnd5e.wikidot.com/wizard:chronurgy" target="_blank">Chronurgy Magic</a></li>
+                <li><a href="https://forgottenrealms.fandom.com/wiki/Aarakocra" target="_blank">Aarakocra | Forgotten Realms Wiki</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
