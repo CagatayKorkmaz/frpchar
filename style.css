@@ -82,6 +82,15 @@ a {
 .main-content h2.kapat::after {
   transform: rotate(90deg); /* sola dönme */
 }
+.main-content h2 span {
+  color: #222;
+  opacity: 0.8;
+  font-style: italic;
+  font-size: 1rem;
+  margin-right: auto;
+  margin-left: 20px;
+  padding-top: 15px;
+}
 
 .story-content {
   font-size: 1.1rem;
@@ -210,6 +219,42 @@ a {
   }
 }
 
+/* Gizli Sınıf */
 .gizli {
   display: none !important;
 }
+
+/* * SAĞA YASLANMIŞ RESİM KUTUSU
+  * Bu kutu, resim ve resim altı yazısını içerir.
+*/
+.resim-kutusu {
+    /* float: right; */
+    width: 280px;
+    /* margin-left: 20px; */
+    border: 1px solid #c8ccd1;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    padding: 6px;
+    font-size: 0.9em;
+}
+
+.resim-kutusu img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    height: auto;
+}
+
+.resim-kutusu figcaption {
+    text-align: left;
+    color: #54595d;
+}
+
+@media (max-width: 768px) {
+    .resim-kutusu {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+        box-sizing: border-box;
+    }
+}
+
